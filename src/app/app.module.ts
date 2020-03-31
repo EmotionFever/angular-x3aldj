@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { GenreListComponent } from './genre-list/genre-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LibraryRequestsService } from './library-requests.service';
+import { GenreCreateComponent } from './genre-create/genre-create.component';
+import { GenreDetailComponent } from './genre-detail/genre-detail.component';
 
 @NgModule({
   imports:      [ 
@@ -16,7 +18,7 @@ import { LibraryRequestsService } from './library-requests.service';
     AppRoutingModule, 
     HttpClientModule,
     ],
-  declarations: [ AppComponent, GenreListComponent, DashboardComponent ],
+  declarations: [ AppComponent, GenreListComponent, DashboardComponent, GenreCreateComponent, GenreDetailComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LibraryRequestsService]
 })

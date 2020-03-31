@@ -8,10 +8,11 @@ import { LibraryRequestsService } from '../library-requests.service';
   styleUrls: ['./genre-detail.component.css']
 })
 export class GenreDetailComponent implements OnInit {
-  title;
+  title = "MyTitle";
   genre : Object;
 
   secondKey;
+  id = "myId";
 
   constructor(
     private request: LibraryRequestsService,
@@ -23,8 +24,8 @@ export class GenreDetailComponent implements OnInit {
   }
 
   showGenres() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.request.getNet("genre/" + id)
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.request.getNet("genre/" + this.id)
       .subscribe((data: Object) => {
         this.title = data['title'];
         this.secondKey = Object.keys(data)[1]; //fetched the key at second index

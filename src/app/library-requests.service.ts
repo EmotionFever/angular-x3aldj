@@ -9,6 +9,7 @@ export class LibraryRequestsService {
   constructor(private http: HttpClient) { }
 
   getNet(urlPath : string) {
+    console.log(this.baseUrl + urlPath);
     return this.http.get(this.baseUrl + urlPath);
   }
 

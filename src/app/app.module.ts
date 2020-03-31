@@ -5,6 +5,7 @@ import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { GenreListComponent } from './genre-list/genre-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports:      [ 
@@ -12,7 +13,7 @@ import { GenreListComponent } from './genre-list/genre-list.component';
     FormsModule,
     AppRoutingModule, 
     ],
-  declarations: [ AppComponent, GenreListComponent ],
+  declarations: [ AppComponent, GenreListComponent, DashboardComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

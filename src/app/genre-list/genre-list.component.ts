@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LibraryRequestsService } from '../library-requests.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-genre-list',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./genre-list.component.css']
 })
 export class GenreListComponent implements OnInit {
+  title = "Not available yet";
+  list : Object[];
 
-  constructor() { }
+  secondKey : string;
+
+  constructor(private request: LibraryRequestsService) { }
 
   ngOnInit() {
+    this.showGenres();
   }
 
+  showGenres() {
+    this.request.getNet("genres")
+      .subscribe((data: Object) => {
+          this.title = data['title'];
+          this.secondKey = Object.keys(data)[1]; //fetched the key at second index
+          this.list = data[this.secondKey];
+      });
+  }
 }

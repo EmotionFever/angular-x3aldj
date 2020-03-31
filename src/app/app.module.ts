@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { GenreListComponent } from './genre-list/genre-list.component';
 
 @NgModule({
   imports:      [ 
@@ -11,7 +12,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     AppRoutingModule, 
     ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, GenreListComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

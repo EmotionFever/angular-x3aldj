@@ -1,18 +1,18 @@
 <h1>{{title}}</h1>
 <p>Welcome to LocalLibrary, a very basic Express website developed as a tutorial example on the Mozilla Developer Network.</p>
 <nav>
-  <a href="/catalog">Home</a>
-  <a href="/catalog/books">All books</a>
-  <a href="/catalog/authors">All authors</a>
-  <a href="/catalog/genres">All genres</a>
-  <a href="/catalog/bookinstances">All book-instances</a>
+  <a routerLink="/">Home</a>
+  <a routerLink="/books">All books</a>
+  <a routerLink="/authors">All authors</a>
+  <a routerLink="/genres">All genres</a>
+  <a routerLink="/bookinstances">All book-instances</a>
   
       <hr>
   
-  <a href="/catalog/author/create">Create new author</a>
-  <a href="/catalog/genre/create">Create new genre</a>
-  <a href="/catalog/book/create">Create new book</a>
-  <a href="/catalog/bookinstance/create">Create new book instance (copy)</a>
+  <a routerLink="/author/create">Create new author</a>
+  <a routerLink="/genre/create">Create new genre</a>
+  <a routerLink="/book/create">Create new book</a>
+  <a routerLink="/bookinstance/create">Create new book instance (copy)</a>
 </nav>
 <p>
   Start editing to see some magic happen :)

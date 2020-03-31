@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LibraryRequestsService } from '../library-requests.service';
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-genre-list',

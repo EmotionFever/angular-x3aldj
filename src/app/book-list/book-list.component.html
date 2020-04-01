@@ -6,6 +6,7 @@
       <a routerLink="/book/{{book._id}}">
         {{book.title}}
       </a>
+      | {{book.author.first_name}} {{book.author.family_name}}
     </li>
   </div>
   <ng-template #elseBlock>

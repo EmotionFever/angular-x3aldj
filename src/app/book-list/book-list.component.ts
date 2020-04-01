@@ -23,11 +23,13 @@ export class BookListComponent implements OnInit {
           const secondKey = Object.keys(data)[1]; //fetched the key at second index
           this.list = data[secondKey];
       });
+      /*
     this.list.sort(function(a, b) {
       let textA = a["title"].toUpperCase();
       let textB = b["title"].toUpperCase();
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
       });
+      */
   }
 
 }

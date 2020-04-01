@@ -1,0 +1,40 @@
+<h1> {{title}}: {{book.title}}</h1>
+  
+  <p> <strong> Author:</strong>
+    <a routerLink="/books/{{book.author._id}}"> {{book.author.first_name}} {{book.author.family_name}}</a>
+  </p> 
+  <p> <strong> Summary:</strong> {{book.summary}} </p>
+  <p> <strong> ISBN:</strong> {{book.isbn}} </p>
+  <p> <strong> Genre:</strong> </p>
+  <div *ngFor="let genre of book.genre">
+    <a routerLink="/genre/{{genre._id}}">
+      {{genre.name}}
+    </a>
+  </div>
+
+<div style='margin-left:20px;margin-top:20px'>
+  <h4> Copies: </h4>
+
+  <dl>
+    <div *ngIf="book_instances.length !=  0; else elseBlock">
+      <div *ngFor="let book_instance of book_instances">
+        <hr>
+        <p>{{book_instance.status}}</p>
+        <p><strong>Imprint: </strong>{{book_instance.imprint}}</p>
+        <p><strong>Due back: </strong>{{book_instance.due_back}}</p>
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <p>There are no copies of this book in the library.</p>
+    </ng-template>
+  </dl>
+</div>
+
+<hr>
+
+<p>
+  <a routerLink="{{book.url}}delete">Delete book</a>
+</p>
+<p>
+  <a routerLink="{{book.url}}update">Update book</a>
+</p>

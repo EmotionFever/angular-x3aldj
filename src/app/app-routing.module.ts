@@ -9,6 +9,7 @@ import { GenreCreateComponent } from './genre-create/genre-create.component';
 import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { BookListComponent } from './book-list/book-list.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'authors', component: AuthorListComponent },
   { path: 'author/:id', component: AuthorDetailComponent },
   { path: 'books', component: BookListComponent },
+  { path: 'book/:id', component: BookDetailComponent },
   /*
   { path: 'pets', component: PetsComponent },
   { path: 'heroes', component: HeroesComponent }

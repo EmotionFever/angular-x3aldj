@@ -12,6 +12,7 @@ import { GenreCreateComponent } from './genre-create/genre-create.component';
 import { GenreDetailComponent } from './genre-detail/genre-detail.component';
 import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
+import { BookListComponent } from './book-list/book-list.component';
 
 @NgModule({
   imports:      [ 
@@ -20,7 +21,7 @@ import { AuthorDetailComponent } from './author-detail/author-detail.component';
     AppRoutingModule, 
     HttpClientModule,
     ],
-  declarations: [ AppComponent, GenreListComponent, DashboardComponent, GenreCreateComponent, GenreDetailComponent, AuthorListComponent, AuthorDetailComponent ],
+  declarations: [ AppComponent, GenreListComponent, DashboardComponent, GenreCreateComponent, GenreDetailComponent, AuthorListComponent, AuthorDetailComponent, BookListComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LibraryRequestsService]
 })

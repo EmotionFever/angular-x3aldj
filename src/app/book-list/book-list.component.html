@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+
+<ul>
+  <div *ngIf="list; else elseBlock">
+    <li *ngFor="let book of list">
+      <a routerLink="/book/{{book._id}}">
+        {{book.title}}
+      </a>
+    </li>
+  </div>
+  <ng-template #elseBlock>
+    <li>There are no books</li>
+  </ng-template>
+</ul>

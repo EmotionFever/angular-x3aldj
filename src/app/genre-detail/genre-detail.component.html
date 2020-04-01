@@ -4,7 +4,7 @@
   <h4> Books: </h4>
 
   <dl>
-    <div *ngIf="books; else elseBlock">
+    <div *ngIf="books.length !=  0; else elseBlock">
       <div *ngFor="let book of books">
         <dt>
           <a routerLink="/books/{{book._id}}">

@@ -3,8 +3,8 @@
 <div style='margin-left:20px;margin-top:20px'>
   <h4> Books: </h4>
 
-  <div *ngIf="books; else elseBlock">
-    <dl>
+  <dl>
+    <div *ngIf="books.length !=  0; else elseBlock">
       <div *ngFor="let book of books">
         <dt>
           <a routerLink="/books/{{book._id}}">
@@ -13,11 +13,11 @@
         </dt>
         <dd>{{book.summary}}</dd>
       </div>
-    </dl>
-  </div>
-  <ng-template #elseBlock>
-    <p>This author has no books.</p>
-  </ng-template>
+    </div>
+    <ng-template #elseBlock>
+      <p>This author has no books.</p>
+    </ng-template>
+  </dl>
 </div>
 
 <hr>

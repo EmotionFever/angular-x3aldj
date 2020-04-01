@@ -11,6 +11,7 @@ import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookInstanceListComponent } from './book-instance-list/book-instance-list.component';
+import { BookInstanceDetailComponent } from './book-instance-detail/book-instance-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'books', component: BookListComponent },
   { path: 'book/:id', component: BookDetailComponent },
   { path: 'bookinstances', component: BookInstanceListComponent },
+  { path: 'bookinstance/:id', component: BookInstanceDetailComponent },
 
 ];
 

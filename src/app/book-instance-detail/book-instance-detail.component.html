@@ -1,0 +1,17 @@
+<h1> ID: {{bookinstance._id}}</h1>
+  
+  <p> <strong> Title:</strong>
+    <a routerLink="/book/{{bookinstance.book._id}}"> {{bookinstance.book.title}}
+    </a>
+  </p>
+  <p> <strong> Imprint:</strong> {{bookinstance.imprint}} </p>
+  <p> <strong> Status:</strong> {{bookinstance.status}} </p>
+
+<hr>
+
+<p>
+  <a routerLink="{{bookinstance.url}}delete">Delete book-instance</a>
+</p>
+<p>
+  <a routerLink="{{bookinstance.url}}update">Update book-instance</a>
+</p>

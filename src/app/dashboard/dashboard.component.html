@@ -1,18 +1,19 @@
-<p>Welcome to LocalLibrary, a very basic Express website developed as a tutorial example on the Mozilla Developer Network.</p>
-<nav>
-  <a routerLink="/">Home</a>
-  <a routerLink="/books">All books</a>
-  <a routerLink="/authors">All authors</a>
-  <a routerLink="/genres">All genres</a>
-  <a routerLink="/bookinstances">All book-instances</a>
-  
-      <hr>
-  
-  <a routerLink="/author/create">Create new author</a>
-  <a routerLink="/genre/create">Create new genre</a>
-  <a routerLink="/book/create">Create new book</a>
-  <a routerLink="/bookinstance/create">Create new book instance (copy)</a>
-</nav>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h1>{{title}}</h1>
+<p> Welcome to em LocalLibrary, a very basic Express website developed as a tutorial example on the Mozilla Developer Network.</p>
+
+
+<h1> Dynamic content</h1>
+
+<div *ngIf="error; else elseBlock">
+  <p>Error getting dynamic content.</p>
+</div>
+<ng-template #elseBlock>
+  <p> The library has the following record counts:</p>
+  <ul>
+    <li> <strong> Books:</strong> {{data.book_count}}</li>
+    <li> <strong> Copies:</strong> {{data.book_instance_count}}</li>
+    <li> <strong> Copies available:</strong> {{data.book_instance_available_count}} </li>
+    <li> <strong> Authors:</strong> {{data.author_count}} </li>
+    <li> <strong> Genres:</strong> {{data.genre_count}} </li>
+  </ul>
+</ng-template>

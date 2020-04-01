@@ -1,2 +1,39 @@
-<h1>{{title}}</h1>
-<router-outlet></router-outlet>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <ul class="sidebar-nav">
+                    <li> <a routerLink="/">Home</a></li>
+                    <li> <a routerLink="/books">All books</a></li>
+                    <li> <a routerLink="/authors">All authors</a></li>
+                    <li> <a routerLink="/genres">All genres</a></li>
+                    <li> <a routerLink="/bookinstances">All book-instances</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li> <a routerLink="/author/create">Create new author</a></li>
+                    <li> <a routerLink="/genre/create">Create new genre</a></li>
+                    <li> <a routerLink="/book/create">Create new book</a></li>
+                    <li> <a routerLink="/bookinstance/create">Create new book instance (copy)</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-10">
+              <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

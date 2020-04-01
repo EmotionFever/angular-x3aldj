@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibraryRequestsService } from '../library-requests.service';
 
 @Component({
   selector: 'app-genre-create',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./genre-create.component.css']
 })
 export class GenreCreateComponent implements OnInit {
+  title : string;
+  genre : Object;
 
-  constructor() { }
+  constructor(
+    private request: LibraryRequestsService,
+    ) { }
 
   ngOnInit() {
+    this.showAuthors();
+  }
+
+  showAuthors() {
+    this.request.getNet("genre/create")
+      .subscribe((data: Object) => {
+        this.title = data['title'];
+      });
   }
 /*
   add(name: string): void {

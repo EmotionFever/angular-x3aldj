@@ -1,3 +1,12 @@
-<label>Genre name:
-  <input #heroName />
-</label>
+<h1>{{title}}</h1>
+
+<div>
+  <label>Genre name:
+    <input #libName type="text" placeholder='Fantasy, Poetry etc.' name='name' required='true'/>
+  </label>
+  
+  <button (click)="add(libName.value); libName.value=''">
+    add
+  </button>
+
+</div>

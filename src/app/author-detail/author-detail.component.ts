@@ -9,7 +9,7 @@ import { LibraryRequestsService } from '../library-requests.service';
 })
 export class AuthorDetailComponent implements OnInit {
   title : string;
-  author : Object;
+  genre : Object;
   books : Object[];
 
   constructor(

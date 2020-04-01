@@ -7,6 +7,7 @@ import { GenreListComponent } from './genre-list/genre-list.component';
 import { GenreDetailComponent } from './genre-detail/genre-detail.component';
 import { GenreCreateComponent } from './genre-create/genre-create.component';
 import { AuthorListComponent } from './author-list/author-list.component';
+import { AuthorCreateComponent } from './author-create/author-create.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'genre/create', component: GenreCreateComponent },
   { path: 'genre/:id', component: GenreDetailComponent },
   { path: 'authors', component: AuthorListComponent },
+  { path: 'author/create', component: AuthorCreateComponent },
   { path: 'author/:id', component: AuthorDetailComponent },
   { path: 'books', component: BookListComponent },
   { path: 'book/:id', component: BookDetailComponent },

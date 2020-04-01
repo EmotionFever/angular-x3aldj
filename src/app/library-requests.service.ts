@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class LibraryRequestsService {
@@ -19,10 +20,7 @@ export class LibraryRequestsService {
   }
 
   createNet(obj: Object, urlPath : string): Observable<Object> {
-    return this.http.post(this.baseUrl + urlPath, obj, this.httpOptions).pipe(
-      tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
-      catchError(this.handleError<Hero>('addHero'))
-    );
+    return this.http.post(this.baseUrl + urlPath, obj, this.httpOptions);
   }
 
 }

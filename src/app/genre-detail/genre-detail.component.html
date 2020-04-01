@@ -2,3 +2,23 @@
 <h2> {{title}}</h2>
 
 <h3> Genre: {{genre.name}}</h3>
+
+<h3> Books: </h3>
+
+<dl >
+  <div *ngFor="let book of books">
+    <dt>
+      <a routerLink="/books/{{book._id}}">
+        {{book.title}}
+      </a>
+    </dt>
+    <dd>{{book.summary}}</dd>
+  </div>
+</dl>
+<hr>
+<p>
+  <a routerLink="{{genre.url}}delete">Delete genre</a>
+</p>
+<p>
+  <a routerLink="{{genre.url}}update">Update genre</a>
+</p>

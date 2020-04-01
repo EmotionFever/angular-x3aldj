@@ -2,18 +2,18 @@
 
 <div>
   <label>First Name:
-    <input #firstName type="text"/>
+    <input [(ngModel)]="first_name" type="text"/>
   </label>
   <label>Last Name:
-    <input #lastName type="text"/>
+    <input [(ngModel)]="family_name" type="text"/>
   </label>
   <label>Date of birth:
-    <input #dateBirth type="date"/>
+    <input [(ngModel)]="date_of_birth" type="date"/>
   </label>
   <label>Date of death:
-    <input #dateDeath type="date"/>
+    <input [(ngModel)]="date_of_death" type="date"/>
   </label>
-  <button (click)="add(firstName.value, lastName.value, dateBirth.value, dateDeath.value); firstName.value=''">
+  <button (click)="add();">
     add
   </button>
 </div>

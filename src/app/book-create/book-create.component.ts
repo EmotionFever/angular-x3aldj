@@ -2,17 +2,20 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LibraryRequestsService } from '../library-requests.service';
 
 @Component({
-  selector: 'app-author-create',
-  templateUrl: './author-create.component.html',
-  styleUrls: ['./author-create.component.css']
+  selector: 'app-book-create',
+  templateUrl: './book-create.component.html',
+  styleUrls: ['./book-create.component.css']
 })
-export class AuthorCreateComponent implements OnInit {
+export class BookCreateComponent implements OnInit {
   title : string;
 
-  @Input() first_name: string;
-  @Input() family_name: string;
-  @Input() date_of_birth: Date;
-  @Input() date_of_death: Date;
+  authors: Object[]
+
+  @Input() titleF: string;
+  @Input() author: Object;
+  @Input() summary: string;
+  @Input() isbn: string;
+  @Input() genres: Object[];
 
   errors : Object[];
 
@@ -35,10 +38,11 @@ export class AuthorCreateComponent implements OnInit {
 
   add(): void {
     const obj = {
-      first_name : this.first_name,
-      family_name : this.family_name,
-      date_of_birth : this.date_of_birth,
-      date_of_death : this.date_of_death
+      title : this.titleF,
+      author : this.author,
+      summary : this.summary,
+      isbn : this.isbn,
+      genres : this.genres
       };
     this.request.createNet(obj, this.thisUrl)
       .subscribe((data: Object) => {

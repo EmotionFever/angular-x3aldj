@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LibraryRequestsService } from '../library-requests.service';
 
 @Component({
@@ -8,7 +8,9 @@ import { LibraryRequestsService } from '../library-requests.service';
 })
 export class GenreCreateComponent implements OnInit {
   title : string;
-  genre : Object;
+
+  @Input() name: string;
+
   errors : Object[];
 
   thisUrl : string = "genre/create";
@@ -28,13 +30,14 @@ export class GenreCreateComponent implements OnInit {
       });
   }
 
-  add(name: string): void {
-    name = name.trim();
+  add(): void {
+    this.name = this.name.trim();
     //if (!name) { return; }
-    const obj = {name : name}; // + "&lastname=";
+    const obj = {name : this.name}; // + "&lastname=";
     this.request.createNet(obj, this.thisUrl)
       .subscribe((data: Object) => {
         this.errors = data["errors"];
       });
+    this.name = "";
   }
 }

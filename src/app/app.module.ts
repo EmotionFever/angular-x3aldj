@@ -14,6 +14,7 @@ import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookInstanceListComponent } from './book-instance-list/book-instance-list.component';
 
 @NgModule({
   imports:      [ 
@@ -22,7 +23,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     AppRoutingModule, 
     HttpClientModule,
     ],
-  declarations: [ AppComponent, GenreListComponent, DashboardComponent, GenreCreateComponent, GenreDetailComponent, AuthorListComponent, AuthorDetailComponent, BookListComponent, BookDetailComponent ],
+  declarations: [ AppComponent, GenreListComponent, DashboardComponent, GenreCreateComponent, GenreDetailComponent, AuthorListComponent, AuthorDetailComponent, BookListComponent, BookDetailComponent, BookInstanceListComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LibraryRequestsService]
 })

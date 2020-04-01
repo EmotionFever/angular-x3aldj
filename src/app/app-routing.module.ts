@@ -10,6 +10,7 @@ import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookInstanceListComponent } from './book-instance-list/book-instance-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -21,10 +22,8 @@ const routes: Routes = [
   { path: 'author/:id', component: AuthorDetailComponent },
   { path: 'books', component: BookListComponent },
   { path: 'book/:id', component: BookDetailComponent },
-  /*
-  { path: 'pets', component: PetsComponent },
-  { path: 'heroes', component: HeroesComponent }
-  */
+  { path: 'bookinstances', component: BookInstanceListComponent },
+
 ];
 
 @NgModule({

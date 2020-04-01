@@ -14,12 +14,13 @@ export class LibraryRequestsService {
 
   constructor(private http: HttpClient) { }
 
-  getNet(urlPath : string) {
+  getNet(urlPath : string): Observable<Object>{
     console.log(this.baseUrl + urlPath);
     return this.http.get(this.baseUrl + urlPath);
   }
 
   createNet(obj: Object, urlPath : string): Observable<Object> {
+    console.log("POST: " + JSON.stringify(obj, null, 2));
     return this.http.post(this.baseUrl + urlPath, obj, this.httpOptions);
   }
 

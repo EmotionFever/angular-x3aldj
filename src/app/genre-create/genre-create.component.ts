@@ -9,29 +9,32 @@ import { LibraryRequestsService } from '../library-requests.service';
 export class GenreCreateComponent implements OnInit {
   title : string;
   genre : Object;
+  errors : Object[];
+
+  thisUrl : string = "genre/create";
 
   constructor(
     private request: LibraryRequestsService,
     ) { }
 
   ngOnInit() {
-    this.showAuthors();
+    this.show();
   }
 
-  showAuthors() {
-    this.request.getNet("genre/create")
+  show() {
+    this.request.getNet(this.thisUrl)
       .subscribe((data: Object) => {
         this.title = data['title'];
       });
   }
-/*
+
   add(name: string): void {
     name = name.trim();
-    if (!name) { return; }
-    this.heroService.addHero({ name } as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
+    //if (!name) { return; }
+    const obj = {name : name}; // + "&lastname=";
+    this.request.createNet(obj, this.thisUrl)
+      .subscribe((data: Object) => {
+        this.errors = data["errors"];
       });
   }
-*/
 }

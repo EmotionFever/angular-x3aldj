@@ -2,11 +2,17 @@
 
 <div>
   <label>Genre name:
-    <input #libName type="text" placeholder='Fantasy, Poetry etc.' name='name' required='true'/>
+    <input #libName type="text" placeholder='Fantasy, Poetry etc.'/>
   </label>
   
   <button (click)="add(libName.value); libName.value=''">
     add
   </button>
-
+</div>
+<div *ngIf="errors">
+  <ul>
+    <li *ngFor="let error of errors">
+      {{error.msg}}
+    </li>
+  </ul>
 </div>

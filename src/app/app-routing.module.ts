@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'genres', component: GenreListComponent },
-  { path: 'genre/:id', component: GenreDetailComponent },
   { path: 'genre/create', component: GenreCreateComponent },
+  { path: 'genre/:id', component: GenreDetailComponent },
   { path: 'authors', component: AuthorListComponent },
   { path: 'author/:id', component: AuthorDetailComponent },
   /*

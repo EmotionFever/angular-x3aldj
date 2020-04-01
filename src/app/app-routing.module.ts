@@ -6,6 +6,8 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { GenreListComponent } from './genre-list/genre-list.component';
 import { GenreDetailComponent } from './genre-detail/genre-detail.component';
 import { GenreCreateComponent } from './genre-create/genre-create.component';
+import { AuthorListComponent } from './author-list/author-list.component';
+import { AuthorDetailComponent } from './author-detail/author-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'genres', component: GenreListComponent },
   { path: 'genre/:id', component: GenreDetailComponent },
   { path: 'genre/create', component: GenreCreateComponent },
+  { path: 'authors', component: AuthorListComponent },
+  { path: 'author/:id', component: AuthorDetailComponent },
   /*
   { path: 'pets', component: PetsComponent },
   { path: 'heroes', component: HeroesComponent }

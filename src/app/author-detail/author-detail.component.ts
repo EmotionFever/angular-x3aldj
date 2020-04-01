@@ -3,13 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { LibraryRequestsService } from '../library-requests.service';
 
 @Component({
-  selector: 'app-genre-detail',
-  templateUrl: './genre-detail.component.html',
-  styleUrls: ['./genre-detail.component.css']
+  selector: 'app-author-detail',
+  templateUrl: './author-detail.component.html',
+  styleUrls: ['./author-detail.component.css']
 })
-export class GenreDetailComponent implements OnInit {
+export class AuthorDetailComponent implements OnInit {
   title : string;
-  genre : Object;
+  author : Object;
   books : Object[];
 
   constructor(
@@ -18,17 +18,17 @@ export class GenreDetailComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.showGenres();
+    this.showAuthors();
   }
 
-  showGenres() {
+  showAuthors() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.request.getNet("genre/" + id)
+    this.request.getNet("author/" + id)
       .subscribe((data: Object) => {
         this.title = data['title'];
-        const secondKey = Object.keys(data)[1]; //fetched the key at second index
+        const secondKey = Object.keys(data)[1];
         this.genre = data[secondKey];
-        const thirdKey = Object.keys(data)[2]; //fetched the key at second index
+        const thirdKey = Object.keys(data)[2];
         this.books = data[thirdKey];
       });
   }

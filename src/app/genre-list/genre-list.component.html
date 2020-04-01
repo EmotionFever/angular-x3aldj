@@ -1,9 +1,14 @@
-<h2>{{title}}</h2>
+<h1>{{title}}</h1>
 
 <ul>
-  <li *ngFor="let genre of list">
-    <a routerLink="/genre/{{genre._id}}">
-      {{genre.name}}
-    </a>
-  </li>
+  <div *ngIf="list; else elseBlock">
+    <li *ngFor="let genre of list">
+      <a routerLink="/genre/{{genre._id}}">
+        {{genre.name}}
+      </a>
+    </li>
+  </div>
+  <ng-template #elseBlock>
+    <li>There are no genre</li>
+  </ng-template>
 </ul>

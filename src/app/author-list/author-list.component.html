@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+
+<ul>
+  <div *ngIf="list; else elseBlock">
+    <li *ngFor="let author of list">
+      <a routerLink="/author/{{author._id}}">
+        {{author.first_name}} {{author.family_name}}
+      </a>
+      <!--
+      {{author.date_of_birth}}
+      {{author.date_of_death}}
+      -->
+    </li>
+  </div>
+  <ng-template #elseBlock>
+    <li>There are no authors</li>
+  </ng-template>
+</ul>

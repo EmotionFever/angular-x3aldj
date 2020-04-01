@@ -10,8 +10,15 @@
 <hr>
 
 <p>
-  <a routerLink="{{bookinstance.url}}delete">Delete book-instance</a>
+  <a (click)="deleteGenre();">Delete book-instance</a>
 </p>
+<div *ngIf="errors">
+  <ul>
+    <li *ngFor="let error of errors">
+      {{error.msg}}
+    </li>
+  </ul>
+</div>
 <p>
   <a routerLink="{{bookinstance.url}}update">Update book-instance</a>
 </p>

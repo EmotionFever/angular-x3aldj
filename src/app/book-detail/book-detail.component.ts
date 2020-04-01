@@ -12,6 +12,8 @@ export class BookDetailComponent implements OnInit {
   book : Object;
   book_instances : Object[] = [];
 
+  errors : Object[];
+
   constructor(
     private request: LibraryRequestsService,
     private route: ActivatedRoute,
@@ -30,6 +32,24 @@ export class BookDetailComponent implements OnInit {
         this.book = data[secondKey];
         const thirdKey = Object.keys(data)[2];
         this.book_instances = data[thirdKey];
+      });
+  }
+
+  deleteGenre() {
+    const id = this.route.snapshot.paramMap.get('id');
+    const obj = {id : id};
+    this.request.createNet(obj, "book/" + id + "/delete")
+      .subscribe((data: Object) => {
+        this.errors = data["errors"];
+        const books = data["book_instances"];
+        if(books.lenth != 0) {
+                    this.errors = [];
+          this.errors.push({msg : "Delete book instances first!"});
+        }
+        if(!this.errors) {
+          this.errors = [];
+          this.errors.push({msg : "Deleted with sucess! :-)"});
+        }
       });
   }
 

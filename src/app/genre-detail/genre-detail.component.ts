@@ -12,6 +12,8 @@ export class GenreDetailComponent implements OnInit {
   genre : Object;
   books : Object[] = [];
 
+  errors : Object[];
+
   constructor(
     private request: LibraryRequestsService,
     private route: ActivatedRoute,
@@ -30,6 +32,19 @@ export class GenreDetailComponent implements OnInit {
         this.genre = data[secondKey];
         const thirdKey = Object.keys(data)[2]; //fetched the key at second index
         this.books = data[thirdKey];
+      });
+  }
+
+  deleteGenre() {
+    const id = this.route.snapshot.paramMap.get('id');
+    const obj = {id : id};
+    this.request.createNet(obj, "genre/" + id + "/delete")
+      .subscribe((data: Object) => {
+        this.errors = data["errors"];
+        if(!this.errors) {
+          this.errors = [];
+          this.errors.push({msg : "Deleted with sucess! :-)"});
+        }
       });
   }
 

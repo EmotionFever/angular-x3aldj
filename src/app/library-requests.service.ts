@@ -21,6 +21,7 @@ export class LibraryRequestsService {
 
   createNet(obj: Object, urlPath : string): Observable<Object> {
     console.log("POST: " + JSON.stringify(obj, null, 2));
+    console.log(this.baseUrl + urlPath);
     return this.http.post(this.baseUrl + urlPath, obj, this.httpOptions);
   }
 

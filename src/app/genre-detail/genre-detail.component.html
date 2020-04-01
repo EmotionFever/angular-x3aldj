@@ -23,8 +23,15 @@
 <hr>
 
 <p>
-  <a routerLink="{{genre.url}}delete">Delete genre</a>
+  <a (click)="deleteGenre();">Delete genre</a>
 </p>
+<div *ngIf="errors">
+  <ul>
+    <li *ngFor="let error of errors">
+      {{error.msg}}
+    </li>
+  </ul>
+</div>
 <p>
   <a routerLink="{{genre.url}}update">Update genre</a>
 </p>

@@ -3,11 +3,10 @@
 <ul>
   <div *ngIf="list; else elseBlock">
     <li *ngFor="let book_instance of list">
-      <a routerLink="/bookinstances/{{book_instance._id}}">
-        {{book_instance.book.title}} :{{book_instance.book.imprint}} - 
+      <a routerLink="/bookinstance/{{book_instance._id}}">
+        {{book_instance.book.title}} : {{book_instance.imprint}}</a>- 
         <span>{{book_instance.status}}</span>
-        <span>(Due: {{book_instance.due_back_formatted}})</span>
-      </a>
+        <span>(Due: {{book_instance.due_back}})</span>
     </li>
   </div>
   <ng-template #elseBlock>
